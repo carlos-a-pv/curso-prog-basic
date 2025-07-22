@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOKEPON!</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .main {
+            background-color: #f0f0f0;
+            height: auto;
+        }
+        
+        .main-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            height: 80vh;
+            padding-block: 40px; 
+        }
+        
+        .main-content{
+            width: 80%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-block: 50px; 
+            
+        }
+
+
+        
+        #elegir-mascota {
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        #elegir-mascota label {
+            display: flex;
+            padding: 16px;
+            /* background-color: red; */
+        }
+        #elegir-mascota input {
+            display: flex;
+            margin-left: 10px;
+            margin: 0;
+            margin-top: -30px;
+        }
+
+        #elegir-mascota button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #667ad2; /* Green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #seleccionar-ataque {
+            /* background-color: blue; */
+            margin-block-start: 10px;
+            padding: 20px;
+        }
+        #seleccionar-ataque p {
+            margin-block: 10px;
+        }
+        
+        #seleccionar-ataque #mascota-jugador,
+        #seleccionar-ataque #mascota-enemigo {
+            font-weight: bold;
+            color: #14182b;
+        }
+
+        #seleccionar-ataque #vidas-mascota-jugador,
+        #seleccionar-ataque #vidas-mascota-enemigo {
+            font-weight: bold;
+            color: #667ad2;
+        }
+
+        #seleccionar-ataque button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #373d5a; /* Green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        footer {
+            position: absolute;
+            bottom: -100px;
+            width: 100%;
+            height: 15dvh;
+            text-align: center;
+            /* padding: 10px; */
+            background-color: #333;
+            color: white;
+        }
+        footer h2 {
+            margin: auto;
+            align-items: center;
+        }
+        
+    </style>
+
+    <script src="./js/mokepon.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>MOKEPON!🔥💧☘</h1>
+    </header>
+    <main class="main">
+        <div class="main-wrapper">
+            <div class="main-content">
+
+                <section id="elegir-mascota">
+                    
+                    <h2>Elige tu mascota:</h2>
+                    
+                    <label for="hipodoge">Hipodoge</label>
+                    <input type="radio" name="mascota" id="hipodoge">
+        
+                    <label for="capipepo">Capipepo</label>
+                    <input type="radio" name="mascota" id="capipepo">
+        
+                    <label for="ratigueya">Ratigueya</label>
+                    <input type="radio" name="mascota" id="ratigueya">
+                    
+                    <label for="langostelvis">langostelvis</label>
+                    <input type="radio" name="mascota" id="langostelvis">
+                    
+                    <label for="tucapalma">tucapalma</label>
+                    <input type="radio" name="mascota" id="tucapalma">
+                    
+                    <label for="pydos">pydos</label>
+                    <input type="radio" name="mascota" id="pydos">
+        
+                    <button id="btn-mascota">Seleccionar</button>
+                </section>
+        
+                <section id="seleccionar-ataque">
+                    <h2>Elige tu ataque:</h2>
+                    <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-mascota-jugador">3</span> vidas</p>
+                    <p>La mascota del enemigo <span id="mascota-enemigo"></span> tieene <span id="vidas-mascota-enemigo">3</span> vidas</p>
+        
+                    <p>
+                        <button id="btn-fuego">Fuego 🔥</button>
+                        <button id="btn-agua">Agua 💧</button>
+                        <button id="btn-tierra">Tierra ☘</button>
+                    </p>
+                </section>
+        
+                <section id="mensajes">
+                    <!-- <p>Tu mascota atacó con FUEGO, la mascota del enemigo atacó con TIERRA - GANASTE 🎉</p> -->
+                </section>
+        
+                <section id="reiniciar">
+                    <button>Reiniciar</button>
+                </section>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <h2>FOOTER</h2>
+    </footer>
+</body>
+</html>
