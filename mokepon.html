@@ -23,7 +23,8 @@
 
         .main {
             background-color: #f0f0f0;
-            height: auto;
+            /* height: auto; */
+            margin-block-end: 20px;
         }
         
         .main-wrapper{
@@ -42,11 +43,9 @@
             flex-direction: column;
             align-items: center;
             padding-block: 50px; 
-            
+            overflow: auto;
         }
 
-
-        
         #elegir-mascota {
             /* background-color: red; */
             display: flex;
@@ -67,13 +66,26 @@
         }
 
         #elegir-mascota button {
+            margin: auto;
             margin-top: 20px;
             padding: 10px;
+            width: 250px;
             background-color: #667ad2; /* Green */
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+        }
+
+        #elegir-mascota button:disabled {
+            width: 250px;
+            padding-inline: 10px;
+            padding-block: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #9a9494;
+            color: white;
+            cursor: not-allowed;
         }
 
         #seleccionar-ataque {
@@ -97,7 +109,7 @@
             color: #667ad2;
         }
 
-        #seleccionar-ataque button {
+        .btn-fuego, .btn-agua, .btn-tierra {
             margin: 5px;
             padding: 10px;
             background-color: #373d5a; /* Green */
@@ -107,19 +119,54 @@
             cursor: pointer;
         }
 
+        #reiniciar button {
+            width: 250px;
+            padding-inline: 10px;
+            padding-block: 10px;
+            margin-block: 16px;
+            border-radius: 8px;
+            border: none;
+            background-color: #667ad2;
+            color: white;
+            
+        }
+
+        #reiniciar button:hover {
+            cursor: pointer;
+            background-color: #09f;
+        }
+
+        #reiniciar button:disabled {
+            width: 250px;
+            padding-inline: 10px;
+            padding-block: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #9a9494;
+            color: white;
+            cursor: not-allowed;
+        }
+
         footer {
             position: absolute;
-            bottom: -100px;
+            bottom: 0;
             width: 100%;
             height: 15dvh;
             text-align: center;
-            /* padding: 10px; */
+            padding: 10px;
             background-color: #333;
             color: white;
         }
         footer h2 {
             margin: auto;
             align-items: center;
+        }
+
+        .deshabilitado {
+            background-color: #a39797;
+            color: white;
+            cursor: not-allowed;
+
         }
         
     </style>
@@ -165,9 +212,9 @@
                     <p>La mascota del enemigo <span id="mascota-enemigo"></span> tieene <span id="vidas-mascota-enemigo">3</span> vidas</p>
         
                     <p>
-                        <button id="btn-fuego">Fuego 🔥</button>
-                        <button id="btn-agua">Agua 💧</button>
-                        <button id="btn-tierra">Tierra ☘</button>
+                        <button class="btn-fuego">Fuego 🔥</button>
+                        <button class="btn-agua">Agua 💧</button>
+                        <button class="btn-tierra">Tierra ☘</button>
                     </p>
                 </section>
         
@@ -176,7 +223,7 @@
                 </section>
         
                 <section id="reiniciar">
-                    <button>Reiniciar</button>
+                    <button id="btn-reiniciar" disabled>Reiniciar</button>
                 </section>
             </div>
         </div>
