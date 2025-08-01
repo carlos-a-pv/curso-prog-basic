@@ -12,16 +12,19 @@ body {
 }
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
     
 }
 .titulo {            
-    font-size: 32px;
+    font-size: 2em;
     margin-block: 24px;
+    text-align: center;
 }
 
 .subtitulo {
-    font-size: 20px;
+    font-size: 1.5em;
     margin-block-end: 16px;
 }
 #elegir-mascota {
@@ -30,12 +33,12 @@ main {
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 80%;
+    width: 70%;
     background-color: #B2B0E8;
-    margin-block-start: 32px;
+    /* margin-block-start: 32px; */
     border-radius: 8px;
     padding: 10px;
-    max-width: 900px;
+    max-width: 800px;
 }
 .tarjetas {
     display: flex;
@@ -45,6 +48,7 @@ main {
 
 .tarjetas label {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 180px;
@@ -91,7 +95,7 @@ main {
     
 }
 #elegir-mascota button{
-    width: 40%;
+    width: 16em;
     margin-block: 16px;
     padding: 10px;
     border: none;
@@ -111,5 +115,124 @@ main {
 input {
     display: none;
 }
-         
+
+#seleccionar-ataque {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 80%;
+    background-color: #B2B0E8;
+    /* margin-block-start: 32px; */
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 900px;
+    gap: 20px;
+}
+#seleccionar-ataque .container-buttons{
+    display: flex;
+    gap: 1.2em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#seleccionar-ataque .container-buttons button{
+    background-color: #3B38A0;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 6px;
+    width: 150px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all ease-in .3s;
+}
+#seleccionar-ataque .container-buttons button:hover {
+    cursor: pointer;
+    background-color: #7A85C1;
+    /* color: #b010cc; */
+}
+
+#seleccionar-ataque .container-buttons button:disabled {
+    /* background-color: #7A85C1; */
+    opacity: .5;
+    cursor: not-allowed;
+    transition: none;
+}
+
+.container-messages {
+    background-color: #7A85C1;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    width: 60%;
+}
+.container-messages div {
+    margin-block: 8px;
+}
+
+.container-messages div button{
+    width: 120px;
+    padding: 8px;
+    border-radius: 8px;
+    /* border: 1px solid #B2B0E8; */
+    border: none;
+    outline: 1px solid #B2B0E8;
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold; 
+    transition: all ease-in .3s;  
+}
+
+.container-messages div button:hover{
+    cursor: pointer;
+    /* background-color: #3B38A0; */
+    color: #3B38A0;
+}
+
+.container-messages div button:disabled{
+    cursor: not-allowed;
+    transition: none;
+}
+
+.marcadores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    justify-items: center;
+    background-color: #B2B0E8;
+    margin-block-start: 40px;
+    padding: 16px;
+    border-radius: 8px;
+}
+.marcadores p {
+    text-align: center;
+}
+
+.marcadores p:first-child{
+    font-weight: bold;
+    color: #3B38A0;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 850px){
+    .tarjetas{
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tarjetas label:last-child{
+        /* flex: 1; */
+        /* margin-inline: 50px; */
+    }
+}
+
+@media (max-width:556px ){
+    #elegir-mascota button{
+        width: 8em;
+    }
+}
+
         

@@ -8,10 +8,12 @@ const btnReiniciar = document.getElementById('btn-reiniciar')
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
 const sectionSeleccionarMascota = document.getElementById('elegir-mascota')
 const sectionReiniciar = document.getElementById('reiniciar');
+const sectionMarcadores = document.getElementById('marcadores')
 
 function iniciarJuego() {
-    sectionSeleccionarAtaque.style.display = 'none';    
-    sectionReiniciar.style.display = 'none';
+    sectionSeleccionarAtaque.style.display = 'none';   
+    sectionMarcadores.style.display = 'none';
+    // sectionReiniciar.style.display = 'none';
 
     let btnMascota = document.getElementById('btn-mascota');
     btnMascota.addEventListener('click', seleccionarMascotaJugador);
@@ -84,8 +86,9 @@ function seleccionarMascotaJugador() {
     }
 
     spanMascotaJugador.innerHTML = mascotaSeleccionada.id;
-    sectionSeleccionarAtaque.style.display = 'block';
+    sectionSeleccionarAtaque.style.display = 'flex';
     sectionSeleccionarMascota.style.display = 'none';
+    sectionMarcadores.style.display = 'grid'
 
     
 
@@ -120,9 +123,7 @@ function seleccionarMascotaEnemigo() {
 
 function crearMensaje() {
     let sectionMensajes = document.getElementById('mensajes');
-    let parrafo = document.createElement('p');
-    parrafo.innerHTML = `Tu mascota: ${ataqueJugador} - Mascota Enemiga: ${ataqueEnemigo} - ${resultadoCombate}`;
-    sectionMensajes.appendChild(parrafo);
+    sectionMensajes.innerHTML = `${resultadoCombate}`;
 } 
 
 function determinarResultado() {
@@ -142,21 +143,21 @@ function determinarResultado() {
     }
     
     crearMensaje();
-    document.getElementById('reiniciar').style.display = 'block';
+    // document.getElementById('reiniciar').style.display = 'block';
 
     if (vidasMascotaJugador.innerHTML <= 0 ){
         alert("¡Has perdido! Tu mascota no tiene más vidas.");
-        btnFuego.classList.add('deshabilitado');
-        btnAgua.classList.add('deshabilitado');
-        btnTierra.classList.add('deshabilitado');
-        btnReiniciar.removeAttribute('disabled')        
+        btnFuego.setAttribute('disabled', '')
+        btnAgua.setAttribute('disabled', '');
+        btnTierra.setAttribute('disabled', '');
+        btnReiniciar.removeAttribute('disabled')    
         return;
     }
     if (vidasMascotaEnemigo.innerHTML <= 0) {
         alert("¡Has ganado! La mascota enemiga no tiene más vidas.");
-        btnFuego.classList.add('deshabilitado');
-        btnAgua.classList.add('deshabilitado');
-        btnTierra.classList.add('deshabilitado');
+        btnFuego.setAttribute('disabled', '')
+        btnAgua.setAttribute('disabled', '');
+        btnTierra.setAttribute('disabled', '');
         btnReiniciar.removeAttribute('disabled')
         return;
     }

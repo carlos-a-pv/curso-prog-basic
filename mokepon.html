@@ -10,9 +10,9 @@
 <body>
     <header>
     </header>   
+    <h1 class="titulo">Mokepon</h1>
     <main class="main">           
         <section id="elegir-mascota">
-            <h1 class="titulo">Mokepon</h1>
             
             <h2 class="subtitulo">Elige tu mascota:</h2>
             
@@ -51,24 +51,36 @@
         </section>
 
         <section id="seleccionar-ataque">
-            <h2>Elige tu ataque:</h2>
-            <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-mascota-jugador">3</span> vidas</p>
-            <p>La mascota del enemigo <span id="mascota-enemigo"></span> tieene <span id="vidas-mascota-enemigo">3</span> vidas</p>
-
-            <p>
+            <h2 class="subtitulo">Elige tu ataque:</h2>
+            
+            <div class="container-buttons">
                 <button class="btn-fuego">Fuego 🔥</button>
                 <button class="btn-agua">Agua 💧</button>
                 <button class="btn-tierra">Tierra ☘</button>
-            </p>
+            </div>
+            <div class="container-messages">
+                <div id="mensajes">
+                </div>
+                <div id="reiniciar">
+                    <button disabled id="btn-reiniciar" disabled>Reiniciar</button>
+                </div>
+            </div>    
         </section>
+        <section class="marcadores" id="marcadores">
+            <div>
+                <p id="vidas-mascota-jugador">3</p>
+                <p id="mascota-jugador"></p>
+            </div>
 
-        <section id="mensajes">
-            <!-- <p>Tu mascota atacó con FUEGO, la mascota del enemigo atacó con TIERRA - GANASTE 🎉</p> -->
-        </section>
+            <div>
+                <p id="vidas-mascota-enemigo">3</p>
+                <p id="mascota-enemigo"></p>
+                <!-- <p>La mascota del enemigo <span id="mascota-enemigo"></span> tieene <span id="vidas-mascota-enemigo">3</span> vidas</p> -->
+            </div>
+        </section >
 
-        <section id="reiniciar">
-            <button id="btn-reiniciar" disabled>Reiniciar</button>
-        </section>
+        
+
     </main>
     <!-- <footer>
         <h2>FOOTER</h2>
