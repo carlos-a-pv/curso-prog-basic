@@ -17,10 +17,20 @@ main {
 
     
 }
-.titulo {            
+.titulo{            
     font-size: 2em;
     margin-block: 24px;
     text-align: center;
+}
+
+.titulo a {
+    border: none;
+    color: white;
+}
+
+.titulo a:hover{
+    cursor: pointer;
+    letter-spacing: .1em;
 }
 
 .subtitulo {
